@@ -4,11 +4,11 @@ def nyc_pigeon_organizer(data)
     value.each do |inner_key, names|
       #loops to the next level to access names
       names.each do |name|
-        # checks if name is not in the hash and adds the name, then poi
+        # checks if name is not in the hash and adds the name, then points to another hash
         if !final_array[name]
           final_array[name] = {}
         end
-        
+        #
         if !final_array[name][key]
           !final_array[name][key] = []
         end
