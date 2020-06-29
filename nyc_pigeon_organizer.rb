@@ -1,11 +1,14 @@
 def nyc_pigeon_organizer(data)
   # write your code here!
-  pigeon_data = []
-  data.each do |color, name|
-    pigeon_data.push(data[color])
+  final_hash = data.each_with_object({}) do |key, value, finish_array|
+    value.each do |inner_key, names|
+      if !finish_array[name]
+        finish_array[name] = {}
+      end
+      if !finish_array[name][key]
+        !finish_array[name][key] = []
+      end
+      finish_array[name][key].push(inner_key.to_s)
+    end
   end
-  pigeon_list = {"theo" => {color: ["purple", "grey"], gender: ["male"], lives: ["Subway"]}
-    
-  }
-  puts pigeon_data
 end
